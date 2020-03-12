@@ -1,0 +1,37 @@
+{
+  "name": "@kalpik/trigger",
+  "version": "1.0.0-ALPHA.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "umd": "dist/index.umd.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "cleanup": "rm -r dist"
+  },
+  "keywords": [
+    "hooks",
+    "react",
+    "rxjs",
+    "trigger"
+  ],
+  "author": "Siddhant Gupta <siddhant@kalpik.studio>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.13.0",
+    "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.23",
+    "react": "^16.13.0",
+    "rollup": "^2.0.5",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "rxjs": "^6.5.4",
+    "typescript": "^3.8.3"
+  }
+}

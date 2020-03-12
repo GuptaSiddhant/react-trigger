@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "umd": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
@@ -12,7 +12,6 @@
     "type": "git",
     "url": "https://github.com/GuptaSiddhant/react-trigger"
   },
-  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -cw",

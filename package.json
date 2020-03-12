@@ -8,6 +8,10 @@
   "files": [
     "dist/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuptaSiddhant/react-trigger"
+  },
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",

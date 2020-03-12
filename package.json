@@ -22,7 +22,7 @@
     "rxjs",
     "trigger"
   ],
-  "author": "Siddhant Gupta <siddhant@kalpik.studio>",
+  "author": "Siddhant Gupta <me@guptasiddhant.com>",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",

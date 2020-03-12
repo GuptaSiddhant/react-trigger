@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 /**
  * Implementation of RxJs Subject
- * @author Siddhant Gupta <siddhant@fasolutions.com>
+ * @author Siddhant Gupta <me@guptasiddhant.com>
  * @description Pass a PayloadType to let the Trigger know what to expect while observing.
  * @method publish Publish (set) new payload
  * @method suscribe Suscribe and listen to changes and execute a function.
@@ -61,3 +61,20 @@ export class Trigger<D> {
     }, []);
   };
 }
+
+/**
+ * Hook to listen to changes of Tiggers (without Topic).
+ * @author Siddhant Gupta <me@guptasiddhant.com>
+ * @param execute Function to run on Trigger
+ * @param deps Array of Triggers to listen to.
+ * @example
+ * useTrigger((payload) => console.log(payload), [Trigger])
+ * @example
+ * useTrigger((payload) => console.log(payload), [Trigger1, Trigger2])
+ */
+export const useTrigger = (
+  execute: (payload: any) => any,
+  deps: Trigger<any>[]
+) => deps.map(dep => dep.useSubscribe(execute));
+
+export default useTrigger;

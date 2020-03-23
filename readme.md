@@ -1,6 +1,6 @@
 # React Trigger
 
-Publish and listen to changes of Tiggers. Implementation of RxJs Subject.
+Publish and listen to changes of Triggers. Implementation of RxJs Subject.
 
 Requires: React ^16.8 for hooks and RxJS.
 
@@ -13,7 +13,7 @@ _In TypeScript, Pass a PayloadType to let the Trigger know what to expect while 
 ### methods
 
 - **publish**: Publish (set) new payload
-- **suscribe**: Suscribe and listen to changes and execute a function.
+- **subscribe**: Subscribe and listen to changes and execute a function.
 
 ### example
 
@@ -33,13 +33,13 @@ _In TypeScript, Pass a PayloadType to let the Trigger know what to expect while 
     myTrigger.useSubscribe((payload) => console.log(payload));
     ==or==
     useEffect(()=>{
-        const sub = myTrigger.suscribe((payload) => console.log(payload))
+        const sub = myTrigger.subscribe((payload) => console.log(payload))
         return () => sub.unsubscribe();
     }
 
 ## useTrigger
 
-Hook to listen to changes of Tiggers (multiple)
+Hook to listen to changes of Triggers (multiple)
 
 ### params
 

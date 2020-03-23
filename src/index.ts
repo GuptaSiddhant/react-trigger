@@ -6,7 +6,7 @@ import { useEffect } from "react";
  * @author Siddhant Gupta <me@guptasiddhant.com>
  * @description Pass a PayloadType to let the Trigger know what to expect while observing.
  * @method publish Publish (set) new payload
- * @method suscribe Suscribe and listen to changes and execute a function.
+ * @method subscribe Subscribe and listen to changes and execute a function.
  * @example
  * type PayloadType = string;
  * const myTrigger = new Trigger<PayloadType>();
@@ -16,7 +16,7 @@ import { useEffect } from "react";
  * myTrigger.useSubscribe((payload) => console.log(payload));
  * --or--
  * useEffect(()=>{
- *  const sub = myTrigger.suscribe((payload) => console.log(payload))
+ *  const sub = myTrigger.subscribe((payload) => console.log(payload))
  *  return () => sub.unsubscribe();
  * })
  */
@@ -34,12 +34,12 @@ export class Trigger<D> {
   publish = (payload: D) => this._subject.next(payload);
 
   /**
-   * Suscribe and listen to changes to a trigger and execute a function.
+   * Subscribe and listen to changes to a trigger and execute a function.
    * Needs to be unsubscribed. Otherwise use useSubscribe.
    * @param {Function} execute Function to execute (receives payload as argument)
    * @example
    * useEffect(()=>{
-   *  const sub = myTrigger.suscribe((payload) => console.log(payload))
+   *  const sub = myTrigger.subscribe((payload) => console.log(payload))
    *  return () => sub.unsubscribe();
    * })
    */
@@ -47,8 +47,8 @@ export class Trigger<D> {
     this._subject.subscribe(execute);
 
   /**
-   * Hook to Suscribe and listen to changes and execute a function.
-   * It manages subscribtions and unsubscribtions.
+   * Hook to Subscribe and listen to changes and execute a function.
+   * It manages subscriptions and un-subscriptions.
    * Can only be used inside component or other Hook.
    * @param {Function} execute Function to execute (receives payload as argument)
    * @example
@@ -63,7 +63,7 @@ export class Trigger<D> {
 }
 
 /**
- * Hook to listen to changes of Tiggers (without Topic).
+ * Hook to listen to changes of Triggers (without Topic).
  * @author Siddhant Gupta <me@guptasiddhant.com>
  * @param execute Function to run on Trigger
  * @param deps Array of Triggers to listen to.
